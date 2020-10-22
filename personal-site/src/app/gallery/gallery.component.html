@@ -1,0 +1,11 @@
+<div class="gallery">
+    <button mat-icon-button class="button" (click)="changeImage(-1)"
+        [disabled]="isFirstImage">
+        <mat-icon>chevron_left</mat-icon>
+    </button>
+    <img [src]="currentImageSrc" [width]="width" [height]="height" />
+    <button mat-icon-button class="button" (click)="changeImage(1)"
+        [disabled]="isLastImage">
+        <mat-icon>chevron_right</mat-icon>
+    </button>
+</div>
