@@ -7,8 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
-import { MatButtonModule, MatIconModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatChipsModule, MatDialogModule, MatGridListModule, MatIconModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { GalleryComponent } from './gallery/gallery.component';
+import { PopoutGalleryComponent } from './gallery/popout-gallery/popout-gallery.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     AboutComponent,
     ProjectsComponent,
     SkillsComponent,
-    GalleryComponent
+    GalleryComponent,
+    PopoutGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +27,13 @@ import { GalleryComponent } from './gallery/gallery.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatChipsModule,
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PopoutGalleryComponent]
 })
 export class AppModule { }

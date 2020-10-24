@@ -1,12 +1,12 @@
 <div class="gallery">
-    <img (click)="popout()" *ngIf="currentImage" [src]="currentImage.path" [width]="currentImage.width" [height]="currentImage.height" />
-    <div class="gallery-controls" [style.width.px]="currentImage.width">
+    <img *ngIf="currentImage" [src]="currentImage.path" [width]="data.imageWidth" [height]="data.imageHeight" />
+    <div class="popout-gallery-controls">
         <button mat-button class="button" (click)="changeImage(-1)" [disabled]="isFirstImage">
             <mat-icon>chevron_left</mat-icon>
         </button>
         <mat-chip-list>
             <mat-chip 
-                *ngFor="let i of images" [ngClass]="{ 'chip': true, 'selected-chip': i.id === currentImage.id }"
+                *ngFor="let i of data.images" [ngClass]="{ 'chip': true, 'selected-chip': i.id === currentImage.id }"
                 (click)="selectImage(i)"    
             ></mat-chip>
         </mat-chip-list>

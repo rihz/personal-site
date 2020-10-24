@@ -1,1 +1,19 @@
-<p>projects works!</p>
+<div class="projects">
+    <div class="project">
+        <mat-grid-list cols="2" rowHeight="fit" [style.height.px]="projectHeight">
+            <mat-grid-tile>
+                <app-gallery [images]="images" (imageChanged)="handleImageChange($event)"></app-gallery>
+            </mat-grid-tile>
+            <mat-grid-tile class="content-tile">
+                <div class="info">
+                    <h1>Project Name</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Veniam ex voluptas laborum nemo quasi, saepe asperiores recusandae expedita veritatis omnis
+                        fugiat perferendis non ducimus autem facilis quas,
+                        natus magni accusantium!
+                    </p>
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>

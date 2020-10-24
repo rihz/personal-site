@@ -19,11 +19,11 @@ button:hover:enabled mat-icon {
     color: #E1EDF7 !important;
 }
 
-.gallery {
+.popout-gallery {
     margin: 10px;
 }
 
-.gallery-controls {
+.popout-gallery-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,10 +32,6 @@ button:hover:enabled mat-icon {
 
 img {
     box-shadow: 0 0 1pt 1pt black;
-}
-
-img:hover {
-    cursor: pointer;
 }
 
 mat-chip.selected-chip {

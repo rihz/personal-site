@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { GalleryImage } from './gallery.models';
+import { PopoutGalleryComponent } from './popout-gallery/popout-gallery.component';
 
 @Component({
   selector: 'app-gallery',
@@ -6,17 +9,17 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  @Input() images: string[];
-  @Input() width: number = 300;
-  @Input() height: number = 200;
+  @Input() images: GalleryImage[];
+  @Output() imageChanged = new EventEmitter<GalleryImage>();
+
   counter = 1;
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
-  get currentImageSrc(): string {
-    return this.images && this.images.length >= this.counter
+  get currentImage(): GalleryImage {
+    return this.images
       ? this.images[this.counter - 1]
-      : '';
+      : null;
   }
 
   get isFirstImage(): boolean {
@@ -28,10 +31,32 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this.currentImage) {
+      this.imageChanged.emit(this.currentImage);
+    }
   }
 
   changeImage(change: number) {
     this.counter += change;
+
+    this.imageChanged.emit(this.currentImage);
+  }
+
+  popout() {
+    const ref = this.dialog.open(PopoutGalleryComponent, {
+      width: '1000px',
+      data: {
+        images: this.images,
+        imageWidth: '950',
+        imageHeight: '600'
+      }
+    });
+  }
+
+  selectImage(image: GalleryImage) {
+    const index = this.images.findIndex(x => x.id === image.id);
+
+    this.counter = index + 1;
   }
 
 }
