@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
-import { MatButtonModule, MatChipsModule, MatDialogModule, MatGridListModule, MatIconModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatGridListModule, MatIconModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PopoutGalleryComponent } from './gallery/popout-gallery/popout-gallery.component';
 
@@ -30,7 +30,8 @@ import { PopoutGalleryComponent } from './gallery/popout-gallery/popout-gallery.
     MatTableModule,
     MatChipsModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

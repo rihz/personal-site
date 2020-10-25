@@ -1,14 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #eee;
+}
 
 .content-tile .mat-figure {
     padding: 20px 50px 20px 0px !important;
 }
 
+mat-card.info {
+    color: #333 !important;
+}
+
 .mat-dialog-container {
     background-color: white !important;
+}
+
+.table-group tr.mat-row {
+    background-color: white !important;
+}
+
+.table-group td.mat-cell {
+    border-bottom-color: #589bd5 !important;
+    color: black !important;
+    padding: 0px 35px;
 }

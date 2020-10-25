@@ -1,3 +1,27 @@
+h1.table-header {
+  background-color: #5B9BD5;
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: white;
+}
+
+.middle-cell {
+  width: 65px;
+  font-style: italic;
+}
+
+.skills {
+  padding-top: 100px;
+}
+
 table {
   width: 100%;
+}
+
+.table-group {
+  margin: 0 auto 25px auto;
+  width: 75%;
+  border: 2px solid #5B9BD5;
+  border-radius: 5px;
 }
