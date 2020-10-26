@@ -1,5 +1,5 @@
 <mat-card class="gallery-card">
-    <div class="gallery">
+    <div class="gallery" *ngIf="images">
         <img (click)="popout()" *ngIf="currentImage" [src]="currentImage.path" [width]="currentImage.width" [height]="currentImage.height" />
         <div class="gallery-controls" [style.width.px]="currentImage.width">
             <button mat-button class="button" (click)="changeImage(-1)" [disabled]="isFirstImage">

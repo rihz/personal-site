@@ -1,0 +1,12 @@
+<button 
+    (mouseleave)="hovering = false" 
+    (click)="goToLink()" 
+    (mouseenter)="hovering = true"
+    mat-button 
+    class="trello-button"
+>
+    <img *ngIf="hovering" src="assets/trello-mark-white.png" height="32px" width="32px" />
+    <img *ngIf="!hovering" src="assets/trello-mark-blue.png" height="32px" width="32px" />
+    <span>{{ text }}</span>
+    <a [id]="id" [href]="link" target="_blank"></a>
+</button>

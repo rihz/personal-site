@@ -1,0 +1,12 @@
+<button 
+    (mouseleave)="hovering = false" 
+    (click)="goToLink()" 
+    (mouseenter)="hovering = true"
+    mat-button 
+    class="github-button"
+>
+    <img *ngIf="hovering" src="assets/github-light.png" height="32px" width="32px" />
+    <img *ngIf="!hovering" src="assets/github-dark.png" height="32px" width="32px" />
+    <span>{{ text }}</span>
+    <a [id]="id" [href]="link" target="_blank"></a>
+</button>

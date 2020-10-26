@@ -1,0 +1,25 @@
+.controls {
+    margin-top: 20px;
+}
+
+.info {
+    h1 {
+        margin-top: 0;
+    }
+
+    background-color: #e1edf7;
+    padding: 25px;
+    border: 2px solid #5b9bd5;
+    margin-top: -75px;
+    max-width: 500px;
+}
+
+.left {
+    position: absolute;
+    right: 40px;
+}
+
+.right {
+    position: absolute;
+    left: 40px;
+}

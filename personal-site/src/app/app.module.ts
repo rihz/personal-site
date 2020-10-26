@@ -10,6 +10,9 @@ import { SkillsComponent } from './skills/skills.component';
 import { MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatGridListModule, MatIconModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PopoutGalleryComponent } from './gallery/popout-gallery/popout-gallery.component';
+import { GithubButtonComponent } from './projects/github-button/github-button.component';
+import { TrelloButtonComponent } from './projects/trello-button/trello-button.component';
+import { ProjectComponent } from './projects/project/project.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { PopoutGalleryComponent } from './gallery/popout-gallery/popout-gallery.
     ProjectsComponent,
     SkillsComponent,
     GalleryComponent,
-    PopoutGalleryComponent
+    PopoutGalleryComponent,
+    GithubButtonComponent,
+    TrelloButtonComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

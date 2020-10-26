@@ -1,6 +1,7 @@
 button {
-    border: 2px solid #5B9BD5;
+    border: 2px solid #333;
     background-color: #E1EDF7;
+    margin: 0 10px;
 }
 
 button:disabled {
@@ -8,23 +9,22 @@ button:disabled {
 }
 
 button:hover:enabled {
-    background-color: #5B9BD5 !important;
+    background-color: #333 !important;
+    color: white !important;
 }
 
 button mat-icon {
-    color: #5B9BD5;
+    color: black;
 }
 
 button:hover:enabled mat-icon {
     color: #E1EDF7 !important;
 }
 
-.gallery {
-    margin: 10px;
-}
-
 .gallery-card {
-    background-color: white;
+    background-color: #e1edf7;
+    border: 2px solid #5b9bd5;
+    padding: 0 0 16px 0;
 }
 
 .gallery-controls {
@@ -32,10 +32,6 @@ button:hover:enabled mat-icon {
     justify-content: space-between;
     align-items: center;
     padding-top: 10px;
-}
-
-img {
-    box-shadow: 0 0 1pt 1pt black;
 }
 
 img:hover {
@@ -47,7 +43,7 @@ mat-chip.selected-chip {
 }
 
 mat-chip {
-    background-color: #5B9BD5 !important;
+    background-color: #333 !important;
     opacity: 0.3;
 }
 

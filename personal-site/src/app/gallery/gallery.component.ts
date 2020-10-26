@@ -9,7 +9,7 @@ import { PopoutGalleryComponent } from './popout-gallery/popout-gallery.componen
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  @Input() images: GalleryImage[];
+  @Input() images: GalleryImage[] = [];
   @Output() imageChanged = new EventEmitter<GalleryImage>();
 
   counter = 1;
@@ -17,9 +17,9 @@ export class GalleryComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   get currentImage(): GalleryImage {
-    return this.images
+    return this.images && this.images.length > 0
       ? this.images[this.counter - 1]
-      : null;
+      : new GalleryImage();
   }
 
   get isFirstImage(): boolean {
