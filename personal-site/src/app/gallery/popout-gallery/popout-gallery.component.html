@@ -1,5 +1,5 @@
 <div class="gallery">
-    <img *ngIf="currentImage" [src]="currentImage.path" [width]="data.imageWidth" [height]="data.imageHeight" />
+    <img *ngIf="currentImage" [src]="currentImage.path" />
     <div class="popout-gallery-controls">
         <button mat-button class="button" (click)="changeImage(-1)" [disabled]="isFirstImage">
             <mat-icon>chevron_left</mat-icon>

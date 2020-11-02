@@ -19,13 +19,13 @@ export class SkillsComponent implements OnInit {
     { name: 'Team Foundation Server (TFS)', years: '4+', description: 'Now known as Azure DevOps. Experienced with boards, sprints, etc. as well as integrations with Microsoft Azure.' }
   ];
   otherSkills: string[] = [
-    'Experience working with project managers and clients to create and tasks to other developers through Azure DevOps.',
+    'Experience working with project managers and clients to create and assign tasks to other developers through Azure DevOps.',
     'Experience managing other developers and working together to accomplish a task within an acceptable timeframe.',
     'Experience proficiently learning new languages and frameworks in a short amount of time in order to produce a desirable result.',
     'Experience with working on an on-call schedule.',
     'Experience making sites responsive to all screen sizes.',
     'Genuine passion for programming and learning new things.',
-    'Laid back attitude and diligent work ethic.'
+    'Easy-going with a diligent work ethic.'
   ];
 
   columns = ['name', 'years', 'description'];

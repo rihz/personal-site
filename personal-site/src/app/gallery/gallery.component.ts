@@ -44,11 +44,9 @@ export class GalleryComponent implements OnInit {
 
   popout() {
     const ref = this.dialog.open(PopoutGalleryComponent, {
-      width: '1000px',
+      width: '80%',
       data: {
-        images: this.images,
-        imageWidth: '950',
-        imageHeight: '600'
+        images: this.images
       }
     });
   }

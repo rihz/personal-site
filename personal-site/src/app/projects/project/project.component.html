@@ -1,82 +1,44 @@
-<div class="project">
-    <mat-grid-list 
-        cols="2" 
-        rowHeight="fit"
-        [style.height.px]="height"
-    >
-        <ng-container *ngIf="!project.reverse">
-            <mat-grid-tile>
-                <div class="left">
-                    <app-gallery
-                    [images]="project.images"
-                    (imageChanged)="changeImage($event)"
-                    ></app-gallery>
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile class="content-tile">
-                <div class="right">
-                    <mat-card class="info">
-                        <h1>{{ project.title }}</h1>
-                        <p>{{ project.description }}</p>
-                        <mat-chip-list>
-                            <mat-chip *ngFor="let lang of project.langs">
-                                {{ lang }}
-                            </mat-chip>
-                        </mat-chip-list>
-                        <div class="controls">
-                            <app-github-button
-                                *ngFor="let github of project.githubLinks"
-                                [link]="github.path"
-                                [text]="github.text"
-                                [id]="github.id"
-                            ></app-github-button>
-                            <app-trello-button
-                                *ngFor="let trello of project.trelloLinks"
-                                [link]="trello.path"
-                                [text]="trello.text"
-                                [id]="trello.id"
-                            ></app-trello-button>
-                        </div>
-                    </mat-card>
-                </div>
-            </mat-grid-tile>
-        </ng-container>
-        <ng-container *ngIf="project.reverse">
-            <mat-grid-tile class="content-tile">
-                <div class="left">
-                    <mat-card class="info">
-                        <h1>{{ project.title }}</h1>
-                        <p>{{ project.description }}</p>
-                        <mat-chip-list>
-                            <mat-chip *ngFor="let lang of project.langs">
-                                {{ lang }}
-                            </mat-chip>
-                        </mat-chip-list>
-                        <div class="controls">
-                            <app-github-button
-                                *ngFor="let github of project.githubLinks"
-                                [link]="github.path"
-                                [text]="github.text"
-                                [id]="github.id"
-                            ></app-github-button>
-                            <app-trello-button
-                                *ngFor="let trello of project.trelloLinks"
-                                [link]="trello.path"
-                                [text]="trello.text"
-                                [id]="trello.id"
-                            ></app-trello-button>
-                        </div>
-                    </mat-card>
-                </div>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <div class="right">
-                    <app-gallery
-                    [images]="project.images"
-                    (imageChanged)="changeImage($event)"
-                    ></app-gallery>
-                </div>
-            </mat-grid-tile>
-        </ng-container>
-    </mat-grid-list>
+<div class="project-main">
+    <div class="background-image" [ngStyle]="{ 'background-image': 'url(' + project.backgroundImage + ')'}"></div>
+    <mat-card class="info" [ngStyle]="{ 'max-width': maxWidth }">
+        <h1>{{ project.title }}</h1>
+        <p>{{ project.description }}</p>
+        <div class="langs">
+            <mat-chip-list>
+                <mat-chip *ngFor="let lang of project.langs">
+                    {{ lang }}
+                </mat-chip>
+            </mat-chip-list>
+        </div>
+        <div class="details">
+            <h6>{{ details }}</h6>
+        </div>
+    </mat-card>
+    <div class="controls">
+        <div *ngIf="project.images.length > 0">
+            <app-project-control 
+                icon="photo_library"
+                text="View Gallery"
+                (clicked)="showGallery()"
+            ></app-project-control>
+        </div>
+        <div *ngFor="let link of project.githubLinks">
+            <app-project-control
+                iconDark="assets/github-dark.png"
+                iconLight="assets/github-light.png"
+                [matIcon]="false"
+                [text]="link.text"
+                (clicked)="navTo(link.path)"
+            ></app-project-control>
+        </div>
+        <div *ngFor="let link of project.trelloLinks">
+            <app-project-control
+                iconDark="assets/trello-mark-blue.png"
+                iconLight="assets/trello-mark-white.png"
+                [matIcon]="false"
+                [text]="link.text"
+                (clicked)="navTo(link.path)"
+            ></app-project-control>
+        </div>
+    </div>
 </div>

@@ -13,6 +13,7 @@ import { PopoutGalleryComponent } from './gallery/popout-gallery/popout-gallery.
 import { GithubButtonComponent } from './projects/github-button/github-button.component';
 import { TrelloButtonComponent } from './projects/trello-button/trello-button.component';
 import { ProjectComponent } from './projects/project/project.component';
+import { ProjectControlComponent } from './projects/project/project-control/project-control.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProjectComponent } from './projects/project/project.component';
     PopoutGalleryComponent,
     GithubButtonComponent,
     TrelloButtonComponent,
-    ProjectComponent
+    ProjectComponent,
+    ProjectControlComponent
   ],
   imports: [
     BrowserModule,

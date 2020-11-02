@@ -1,0 +1,6 @@
+<mat-card (click)="clicked.emit(true)" class="control" (mouseenter)="hovering = true" (mouseleave)="hovering = false">
+    <mat-icon *ngIf="matIcon" class="icon" [inline]="true">{{ icon }}</mat-icon>
+    <img *ngIf="!matIcon && !hovering" width="24" height="24" [src]="iconDark" />
+    <img *ngIf="!matIcon && hovering" width="24" height="24" [src]="iconLight" />
+    <h3 *ngIf="hovering">{{ text }}</h3>
+</mat-card>

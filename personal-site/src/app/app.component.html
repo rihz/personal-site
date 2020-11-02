@@ -1,13 +1,16 @@
 <mat-toolbar class="toolbar">
-  <h4>Joshua Shields</h4>
+  <div class="title">
+    <h4>Joshua Shields</h4>
+    <h6>Lead Application Developer</h6>
+  </div>
   <button [ngClass]="{ 'selected': currentRoute === '/' || currentRoute === '/about' }" routerLink="about" mat-button class="selection">
     <mat-icon>person</mat-icon>
     About
   </button>
-  <button [ngClass]="{ 'selected': currentRoute === '/skills' }" routerLink="skills" mat-button class="selection">
+  <!-- <button [ngClass]="{ 'selected': currentRoute === '/skills' }" routerLink="skills" mat-button class="selection">
     <mat-icon>notes</mat-icon>
     Skills
-  </button>
+  </button> -->
   <button [ngClass]="{ 'selected': currentRoute === '/projects' }" routerLink="projects" mat-button class="selection">
     <mat-icon>code</mat-icon>
     Projects

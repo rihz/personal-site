@@ -1,6 +1,7 @@
 button {
-    border: 2px solid #5B9BD5;
-    background-color: #E1EDF7;
+    border: 2px solid #333;
+    background-color: white;
+    margin: 0px 15px;
 }
 
 button:disabled {
@@ -8,15 +9,15 @@ button:disabled {
 }
 
 button:hover:enabled {
-    background-color: #5B9BD5 !important;
+    background-color: #333 !important;
 }
 
 button mat-icon {
-    color: #5B9BD5;
+    color: #333;
 }
 
 button:hover:enabled mat-icon {
-    color: #E1EDF7 !important;
+    color: white !important;
 }
 
 .popout-gallery {
@@ -25,13 +26,14 @@ button:hover:enabled mat-icon {
 
 .popout-gallery-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-top: 10px;
 }
 
 img {
     box-shadow: 0 0 1pt 1pt black;
+    width: 100%;
 }
 
 mat-chip.selected-chip {
@@ -39,7 +41,7 @@ mat-chip.selected-chip {
 }
 
 mat-chip {
-    background-color: #5B9BD5 !important;
+    background-color: #333 !important;
     opacity: 0.3;
 }
 

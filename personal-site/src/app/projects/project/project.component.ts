@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { GalleryImage } from 'src/app/gallery/gallery.models';
+import { PopoutGalleryComponent } from 'src/app/gallery/popout-gallery/popout-gallery.component';
 import { Project } from '../projects.model';
 
 @Component({
@@ -14,7 +16,13 @@ export class ProjectComponent implements OnInit {
   height = 0;
   defaultHeight = 500;
 
-  constructor() { }
+  showButton = false;
+
+  constructor(public dialog: MatDialog) { }
+
+  get maxWidth(): string {
+    return this.project.fullWidth ? '1000px' : '500px';
+  }
 
   ngOnInit() {
   }  
@@ -23,6 +31,20 @@ export class ProjectComponent implements OnInit {
     this.height = newImage
       ? newImage.height + 100
       : this.defaultHeight;
+  }
+
+  showGallery() {
+      const ref = this.dialog.open(PopoutGalleryComponent, {
+        width: '90%',
+        panelClass: 'popout-gallery',
+        data: {
+          images: this.project.images
+        }
+      });
+  }
+
+  navTo(path: string) {
+    window.open(path, '_blank');
   }
 
 }
