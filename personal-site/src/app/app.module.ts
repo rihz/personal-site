@@ -14,6 +14,7 @@ import { GithubButtonComponent } from './projects/github-button/github-button.co
 import { TrelloButtonComponent } from './projects/trello-button/trello-button.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { ProjectControlComponent } from './projects/project/project-control/project-control.component';
+import { WindowService } from './services/window.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { ProjectControlComponent } from './projects/project/project-control/proj
     MatDialogModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    WindowService
+  ],
   bootstrap: [AppComponent],
   entryComponents: [PopoutGalleryComponent]
 })
