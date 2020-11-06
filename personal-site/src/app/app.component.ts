@@ -26,7 +26,8 @@ export class AppComponent implements OnInit {
     this.onResize();    
   }
 
-  onResize(){
+  @HostListener('window:resize')
+  onResize(): void {
     this.windowService.checkWidth();
   }
 }
