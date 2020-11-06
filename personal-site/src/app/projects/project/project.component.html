@@ -15,28 +15,31 @@
         </div>
     </mat-card>
     <div class="controls">
-        <div *ngIf="project.images.length > 0">
+        <div [ngClass]="{ 'control-wrapper': !isMobile, 'mobile-control-wrapper': isMobile }" *ngIf="project.images.length > 0">
             <app-project-control 
                 icon="photo_library"
                 text="View Gallery"
+                [isMobile]="isMobile"
                 (clicked)="showGallery()"
             ></app-project-control>
         </div>
-        <div *ngFor="let link of project.githubLinks">
+        <div [ngClass]="{ 'control-wrapper': !isMobile, 'mobile-control-wrapper': isMobile }" *ngFor="let link of project.githubLinks">
             <app-project-control
                 iconDark="assets/github-dark.png"
                 iconLight="assets/github-light.png"
                 [matIcon]="false"
                 [text]="link.text"
+                [isMobile]="isMobile"
                 (clicked)="navTo(link.path)"
             ></app-project-control>
         </div>
-        <div *ngFor="let link of project.trelloLinks">
+        <div [ngClass]="{ 'control-wrapper': !isMobile, 'mobile-control-wrapper': isMobile }" *ngFor="let link of project.trelloLinks">
             <app-project-control
                 iconDark="assets/trello-mark-blue.png"
                 iconLight="assets/trello-mark-white.png"
                 [matIcon]="false"
                 [text]="link.text"
+                [isMobile]="isMobile"
                 (clicked)="navTo(link.path)"
             ></app-project-control>
         </div>

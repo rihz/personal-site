@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
-import { MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatGridListModule, MatIconModule, MatTableModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatGridListModule, MatIconModule, MatMenuModule, MatTableModule, MatToolbarModule } from '@angular/material';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PopoutGalleryComponent } from './gallery/popout-gallery/popout-gallery.component';
 import { GithubButtonComponent } from './projects/github-button/github-button.component';
@@ -40,7 +40,8 @@ import { WindowService } from './services/window.service';
     MatChipsModule,
     MatGridListModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [
     WindowService

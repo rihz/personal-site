@@ -11,6 +11,7 @@ export class ProjectControlComponent implements OnInit {
   @Input() iconLight: string;
   @Input() matIcon = true;
   @Input() text: string;
+  @Input() isMobile: boolean = false;
   @Output() clicked = new EventEmitter<boolean>();
 
   hovering = false;

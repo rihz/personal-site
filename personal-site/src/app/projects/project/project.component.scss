@@ -47,8 +47,12 @@
     margin-bottom: 20px;
 }
 
-.controls div:not(:last-child) {
+.controls .control-wrapper:not(:last-child) {
     margin-right: 50px !important;
+}
+
+.controls .mobile-control-wrapper:not(:last-child) {
+    margin-bottom: 15px !important;
 }
 
 .full-width {
@@ -119,4 +123,20 @@ mat-chip:hover::after {
 h3 {
     color: black;
     margin: 0 0 0 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .controls {
+        display: block;
+    }
+
+    .info {
+        .langs {
+            padding: 15px !important;
+        }
+    }
+
+    .project-main {
+        height: auto !important;
+    }
 }

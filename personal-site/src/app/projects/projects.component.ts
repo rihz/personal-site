@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryImage } from '../gallery/gallery.models';
+import { WindowService } from '../services/window.service';
 import { Project } from './projects.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { Project } from './projects.model';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  isMobile = false;
   projects: Project[] = [
     {
       title: 'Pokemon Team Builder',
@@ -128,10 +130,17 @@ export class ProjectsComponent implements OnInit {
     }
   ];
   
-  constructor() { }
+  constructor(private windowService: WindowService) { }
 
   ngOnInit() {
-    
+    this.onResize();    
+    this.windowService.checkWidth();
+  }
+
+  onResize(){
+    this.windowService.getMobileStatus().subscribe( isMobile =>{
+      this.isMobile = isMobile;
+    });
   }
 
 }

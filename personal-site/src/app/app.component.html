@@ -16,9 +16,23 @@
       <mat-icon>code</mat-icon>
       Projects
     </button>
-    <button mat-icon-button *ngIf="isMobile">
+    <button mat-icon-button *ngIf="isMobile" [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
+    <mat-menu #menu="matMenu" style="display: none;">
+      <button mat-menu-item routerLink="about" class="selection">
+        <mat-icon>person</mat-icon>
+        About
+      </button>
+      <!-- <button [ngClass]="{ 'selected': currentRoute === '/skills' }" routerLink="skills" mat-button class="selection">
+        <mat-icon>notes</mat-icon>
+        Skills
+      </button> -->
+      <button mat-menu-item routerLink="projects" class="selection">
+        <mat-icon>code</mat-icon>
+        Projects
+      </button>
+    </mat-menu>
   </mat-toolbar>
   <router-outlet></router-outlet>
 </div>

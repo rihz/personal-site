@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WindowService } from '../services/window.service';
 import { Skill } from './skills.model';
 
 @Component({
@@ -7,6 +8,8 @@ import { Skill } from './skills.model';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
+  isMobile = false;
+
   skills: Skill[] = [
     { name: 'C#', years: '4+', description: 'Professional and personal experience. Main language used at current position. Most used language on personal projects.' },
     { name: 'C++', years: '2+', description: 'Mostly personal experience. Most commonly used language throughout college career.' },
@@ -28,11 +31,25 @@ export class SkillsComponent implements OnInit {
     'Easy-going with a diligent work ethic.'
   ];
 
-  columns = ['name', 'years', 'description'];
   otherColumns = ['skill'];
-  constructor() { }
+
+  constructor(private windowService: WindowService) { }
+
+  get columns(): string[] {
+    return this.isMobile
+      ? ['name', 'years']
+      : ['name', 'years', 'description'];
+  }
 
   ngOnInit() {
+    this.onResize();    
+    this.windowService.checkWidth();
+  }
+
+  onResize(){
+    this.windowService.getMobileStatus().subscribe( isMobile =>{
+      this.isMobile = isMobile;
+    });
   }
 
 }

@@ -15,7 +15,9 @@
     }
 }
 
-.control:hover {
+
+.control:hover,
+.mobile-control {
     background-color: #333 !important;
     cursor: pointer;
 

@@ -1,6 +1,7 @@
 <div class="projects">
     <app-project
         *ngFor="let project of projects"
+        [isMobile]="isMobile"
         [project]="project"
     ></app-project>
 </div>

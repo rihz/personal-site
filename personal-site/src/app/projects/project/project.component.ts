@@ -10,6 +10,7 @@ import { Project } from '../projects.model';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
+  @Input() isMobile: boolean;
   @Input() project: Project;
   @Input() reverse = false;
 
@@ -25,6 +26,7 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }  
 
   changeImage(newImage: GalleryImage) {

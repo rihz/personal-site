@@ -20,11 +20,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.windowService.getMobileStatus().subscribe( isMobile =>{
+    this.windowService.getMobileStatus().subscribe(isMobile => {
       this.isMobile = isMobile;
-      if(isMobile){
-        console.log('Mobile device detected')
-      }
     });
     this.onResize();    
   }
