@@ -19,6 +19,10 @@ export class AppComponent implements OnInit {
     return this.router.url;
   }
 
+  get version(): string {
+    return '1.2.0';
+  }
+
   ngOnInit(){
     this.windowService.getMobileStatus().subscribe(isMobile => {
       this.isMobile = isMobile;

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { GalleryImage } from 'src/app/gallery/gallery.models';
 import { PopoutGalleryComponent } from 'src/app/gallery/popout-gallery/popout-gallery.component';
@@ -13,6 +13,7 @@ export class ProjectComponent implements OnInit {
   @Input() isMobile: boolean;
   @Input() project: Project;
   @Input() reverse = false;
+  @Output() openGallery = new EventEmitter<GalleryImage[]>();
 
   height = 0;
   defaultHeight = 500;
@@ -29,20 +30,14 @@ export class ProjectComponent implements OnInit {
     
   }  
 
-  changeImage(newImage: GalleryImage) {
-    this.height = newImage
-      ? newImage.height + 100
-      : this.defaultHeight;
-  }
+  // changeImage(newImage: GalleryImage) {
+  //   this.height = newImage
+  //     ? newImage.height + 100
+  //     : this.defaultHeight;
+  // }
 
   showGallery() {
-      const ref = this.dialog.open(PopoutGalleryComponent, {
-        width: '90%',
-        panelClass: 'popout-gallery',
-        data: {
-          images: this.project.images
-        }
-      });
+    this.openGallery.emit(this.project.images);
   }
 
   navTo(path: string) {

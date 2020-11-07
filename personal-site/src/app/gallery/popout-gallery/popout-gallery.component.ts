@@ -43,12 +43,12 @@ export class PopoutGalleryComponent implements OnInit {
     this.counter += change;
   }
 
-  selectImage(image: GalleryImage) {
-    const index = this.data.images
-      ? this.data.images.findIndex(x => x.id === image.id)
-      : 0;
+  // selectImage(image: GalleryImage) {
+  //   const index = this.data.images
+  //     ? this.data.images.findIndex(x => x.id === image.id)
+  //     : 0;
 
-    this.counter = index + 1;
-  }
+  //   this.counter = index + 1;
+  // }
 
 }

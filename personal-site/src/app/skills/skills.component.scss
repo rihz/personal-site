@@ -6,13 +6,18 @@ h1.table-header {
   color: white;
 }
 
-.middle-cell {
-  width: 65px;
-  font-style: italic;
-}
-
 table {
   width: 100%;
+  background-color: white;
+
+  td {
+    color: #333;
+    border: 1px solid #5B9BD5;
+  }
+
+  td.description {
+    padding: 5px 0 0 25px;
+  }
 }
 
 .table-group {
@@ -20,4 +25,24 @@ table {
   width: 75%;
   border: 2px solid #5B9BD5;
   border-radius: 5px;
+}
+
+.header {
+  background-color: #5b98d5;
+  margin: 0;
+  padding: 0.5em;
+  text-align: center;
+  color: white;
+}
+
+.header-title {
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 769px) {
+  .middle-cell {
+    width: 65px;
+    font-style: italic;
+  }
 }

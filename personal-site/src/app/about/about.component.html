@@ -1,44 +1,48 @@
 <div class="about">
-    <mat-card>
-        <h1 class="header">
-            About
-        </h1>
-        <p>
-            <strong>Josh Shields</strong> is currently a lead application developer at Global Data Consultants, LLC (GDC) in Mechanicsburg, Pennsylvania.
-            <br>
-            <br>
-            <span>
-                Josh graduated in May 2016 from California University of Pennsylvania with a B.S. of Computer Science, and has worked at GDC since his graduation over four years ago.
-            </span>
-            <br>
-            <br>
-            <span>
-                In his career thus far, Josh has learned a variety of new languages and frameworks and has grown to be a proficient full-stack developer.
-            </span>
-            <br>
-            <br>
-            <span>
-                Within the first year of employment, Josh had earned his MCSA certification and after another half-year finished the certification path and earned his MCSD.
-            </span>
-            <br>
-            <span>
-                Josh achieved this at a faster rate than his other coworkers who started at the same time as him.
-            </span>
-            <br>
-            <br>
-            <span>
-                After about two years of employment, Josh began the "consulting" aspect of the position and started being contracted out to other companies as either an individual developer, or as part of a team formed at GDC in which he served as the lead developer.
-            </span>
-            <br>
-            <br>
-            <span>
-                Whether working on contract or on internal projects, <strong>Josh strives to deliver his absolute best</strong>.
-            </span>
-        </p>
-        <p>
-            To view some of Josh's personal projects, please click the "Projects" link in the toolbar above, 
-            or click <a routerLink="/projects">here</a>
-        </p>
-    </mat-card>
+    <mat-accordion>
+        <mat-expansion-panel class="header" expanded="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="header-title">
+                    About
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+                <strong>Josh Shields</strong> is currently a lead application developer at Global Data Consultants, LLC (GDC) in Mechanicsburg, Pennsylvania.
+                <br>
+                <br>
+                <span>
+                    Josh graduated in May 2016 from California University of Pennsylvania with a B.S. of Computer Science, and has worked at GDC since his graduation over four years ago.
+                </span>
+                <br>
+                <br>
+                <span>
+                    In his career thus far, Josh has learned a variety of new languages and frameworks and has grown to be a proficient full-stack developer.
+                </span>
+                <br>
+                <br>
+                <span>
+                    Within the first year of employment, Josh had earned his MCSA certification and after another half-year finished the certification path and earned his MCSD.
+                </span>
+                <br>
+                <span>
+                    Josh achieved this at a faster rate than his other coworkers who started at the same time as him.
+                </span>
+                <br>
+                <br>
+                <span>
+                    After about two years of employment, Josh began the "consulting" aspect of the position and started being contracted out to other companies as either an individual developer, or as part of a team formed at GDC in which he served as the lead developer.
+                </span>
+                <br>
+                <br>
+                <span>
+                    Whether working on contract or on internal projects, <strong>Josh strives to deliver his absolute best</strong>.
+                </span>
+            </p>        
+            <p>
+                To view some of Josh's personal projects, please click the "Projects" link in the toolbar above, 
+                or click <a routerLink="/projects">here</a>
+            </p>
+        </mat-expansion-panel>
+    </mat-accordion>
     <app-skills></app-skills>
 </div>

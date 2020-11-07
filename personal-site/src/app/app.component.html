@@ -1,4 +1,4 @@
-<div>
+<div #wrapper>
   <mat-toolbar class="toolbar" [ngStyle]="{ 'justifyContent': isMobile ? 'space-between' : 'normal' }">
     <div class="title">
       <h4>Joshua Shields</h4>
@@ -35,4 +35,12 @@
     </mat-menu>
   </mat-toolbar>
   <router-outlet></router-outlet>
+  <mat-toolbar class="footer">
+    <h6 *ngIf="!isMobile" class="footer-left" style="margin-right: 10px;">
+      Designed and coded by Joshua Shields. 
+    </h6>
+    <h6 class="footer-right">
+      Site Version {{ version }}
+    </h6>
+  </mat-toolbar>
 </div>

@@ -51,10 +51,10 @@ export class GalleryComponent implements OnInit {
     });
   }
 
-  selectImage(image: GalleryImage) {
-    const index = this.images.findIndex(x => x.id === image.id);
+  // selectImage(image: GalleryImage) {
+  //   const index = this.images.findIndex(x => x.id === image.id);
 
-    this.counter = index + 1;
-  }
+  //   this.counter = index + 1;
+  // }
 
 }

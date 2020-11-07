@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { GalleryImage } from '../gallery/gallery.models';
 import { WindowService } from '../services/window.service';
 import { Project } from './projects.model';
+import * as PhotoSwipe from 'photoswipe';
+import * as PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 
 @Component({
   selector: 'app-projects',
@@ -31,15 +33,15 @@ export class ProjectsComponent implements OnInit {
       ],
       trelloLinks: [],
       images: [
-        { id: 1, path: 'assets/team-builder/News.PNG', width: 600, height: 400 },
-        { id: 2, path: 'assets/team-builder/Build 1.PNG', width: 600, height: 400 },
-        { id: 3, path: 'assets/team-builder/Build 2.PNG', width: 600, height: 400 },
-        { id: 4, path: 'assets/team-builder/Build 3.PNG', width: 600, height: 400 },
-        { id: 5, path: 'assets/team-builder/View 1.PNG', width: 600, height: 400 },
-        { id: 6, path: 'assets/team-builder/View 2.PNG', width: 600, height: 400 },
-        { id: 7, path: 'assets/team-builder/CHange Theme.PNG', width: 600, height: 400 },
-        { id: 8, path: 'assets/team-builder/Different Theme 1.PNG', width: 600, height: 400 },
-        { id: 9, path: 'assets/team-builder/Different Theme 2.PNG', width: 600, height: 400 },
+        { src: 'assets/team-builder/News.PNG', w: 2558, h: 571 },
+        { src: 'assets/team-builder/Build 1.PNG', w: 2562, h: 1051 },
+        { src: 'assets/team-builder/Build 2.PNG', w: 2558, h: 595 },
+        { src: 'assets/team-builder/Build 3.PNG', w: 2559, h: 576 },
+        { src: 'assets/team-builder/View 1.PNG', w: 2562, h: 1215 },
+        { src: 'assets/team-builder/View 2.PNG', w: 2545, h: 778 },
+        { src: 'assets/team-builder/CHange Theme.PNG', w: 2558, h: 945 },
+        { src: 'assets/team-builder/Different Theme 1.PNG', w: 2557, h: 745 },
+        { src: 'assets/team-builder/Different Theme 2.PNG', w: 2557, h: 763 },
       ],
       backgroundImage: 'assets/team-builder/News.PNG',
       fullWidth: false
@@ -64,14 +66,14 @@ export class ProjectsComponent implements OnInit {
         }
       ],
       images: [
-        { id: 10, path: 'assets/multitool/Register.PNG', width: 600, height: 400 },
-        { id: 11, path: 'assets/multitool/Login.PNG', width: 600, height: 400 },
-        { id: 12, path: 'assets/multitool/Checklist 1.PNG', width: 600, height: 400 },
-        { id: 13, path: 'assets/multitool/Checklist 2.PNG', width: 600, height: 400 },
-        { id: 14, path: 'assets/multitool/Ledger 1.PNG', width: 600, height: 400 },
-        { id: 15, path: 'assets/multitool/Ledger 2.PNG', width: 600, height: 400 },
-        { id: 16, path: 'assets/multitool/Profile.PNG', width: 600, height: 400 },
-        { id: 17, path: 'assets/multitool/Link Account.PNG', width: 600, height: 400 },
+        { src: 'assets/multitool/Register.PNG', w: 1960, h: 976 },
+        { src: 'assets/multitool/Login.PNG', w: 2544, h: 959 },
+        { src: 'assets/multitool/Checklist 1.PNG', w: 1979, h: 692 },
+        { src: 'assets/multitool/Checklist 2.PNG', w: 1979, h: 1104 },
+        { src: 'assets/multitool/Ledger 1.PNG', w: 2558, h: 618 },
+        { src: 'assets/multitool/Ledger 2.PNG', w: 1102, h: 739 },
+        { src: 'assets/multitool/Profile.PNG', w: 1978, h: 1176 },
+        { src: 'assets/multitool/Link Account.PNG', w: 1978, h: 971 },
       ],
       backgroundImage: 'assets/multitool/Profile.PNG',
       fullWidth: false
@@ -123,7 +125,13 @@ export class ProjectsComponent implements OnInit {
         + 'the same frameworks as you see in the projects above.',
       langs: ['Angular', 'C# Web API', 'SQL', 'JavaScript', 'React', 'jQuery', 'VBA', '...and more!'],
       githubLinks: [],
-      trelloLinks: [],
+      trelloLinks: [
+        {
+          path: 'https://trello.com/b/lNLnxhzl/js-personal-site-updates',
+          id: 'personal1',
+          text: 'View Project Board'
+        }
+      ],
       images: [],
       fullWidth: true,
       backgroundImage: ''
@@ -141,6 +149,17 @@ export class ProjectsComponent implements OnInit {
     this.windowService.getMobileStatus().subscribe( isMobile =>{
       this.isMobile = isMobile;
     });
+  }
+
+  openPhotoswipe(images: GalleryImage[]) {
+    const element = <HTMLElement>document.querySelectorAll('.pswp')[0];
+
+    const options = {
+      index: 0
+    };
+
+    let gallery = new PhotoSwipe(element, PhotoSwipeUI_Default, images, options);
+    gallery.init();
   }
 
 }

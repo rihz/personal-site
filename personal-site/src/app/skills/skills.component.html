@@ -1,40 +1,48 @@
 <div class="skills">
-    <div class="table-group">
-        <h1 class="table-header">
-            Technical Skills
-        </h1>
-        <table mat-table [dataSource]="skills">
-            <ng-container matColumnDef="name">
-                <td mat-cell *matCellDef="let element">
-                    <strong>{{ element.name }}</strong>
-                </td>
-            </ng-container>
-            <ng-container matColumnDef="years">
-                <td class="middle-cell" mat-cell *matCellDef="let element">
-                    {{ element.years }} years
-                </td>
-            </ng-container>
-            <ng-container *ngIf="!isMobile" matColumnDef="description">
-                <td mat-cell *matCellDef="let element">
-                    {{ element.description }}
-                </td>
-            </ng-container>
-            
-            <tr mat-row *matRowDef="let row; columns: columns;"></tr>
-        </table>
-    </div>    
-    <div class="table-group">
-        <h1 class="table-header">
-            Other Noteworthy Skills
-        </h1>
-        <table mat-table [dataSource]="otherSkills">
-            <ng-container matColumnDef="skill">
-                <td mat-cell *matCellDef="let element">
-                    {{ element }}
-                </td>
-            </ng-container>
-            
-            <tr mat-row *matRowDef="let row; columns: otherColumns;"></tr>
-        </table>
-    </div>
+    <mat-accordion>
+        <mat-expansion-panel class="header table-panel" expanded="true" style="margin-bottom: 35px;">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="header-title">
+                    Technical Skills
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="skills">
+                <ng-container matColumnDef="name">
+                    <td mat-cell *matCellDef="let element">
+                        <strong>{{ element.name }}</strong>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="years">
+                    <td class="middle-cell" mat-cell *matCellDef="let element">
+                        {{ element.years }} years
+                    </td>
+                </ng-container>
+                <ng-container *ngIf="!isMobile" matColumnDef="description">
+                    <td class="description" mat-cell *matCellDef="let element">
+                        {{ element.description }}
+                    </td>
+                </ng-container>
+                
+                <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+            </table>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+        <mat-expansion-panel class="header table-panel" expanded="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="header-title">
+                    Other Noteworthy Skills
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <table mat-table [dataSource]="otherSkills">
+                <ng-container matColumnDef="skill">
+                    <td mat-cell *matCellDef="let element">
+                        {{ element }}
+                    </td>
+                </ng-container>
+                
+                <tr mat-row *matRowDef="let row; columns: otherColumns;"></tr>
+            </table>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>
