@@ -33,15 +33,15 @@ export class ProjectsComponent implements OnInit {
       ],
       trelloLinks: [],
       images: [
-        { src: 'assets/team-builder/News.PNG', w: 2558, h: 571 },
-        { src: 'assets/team-builder/Build 1.PNG', w: 2562, h: 1051 },
-        { src: 'assets/team-builder/Build 2.PNG', w: 2558, h: 595 },
-        { src: 'assets/team-builder/Build 3.PNG', w: 2559, h: 576 },
-        { src: 'assets/team-builder/View 1.PNG', w: 2562, h: 1215 },
-        { src: 'assets/team-builder/View 2.PNG', w: 2545, h: 778 },
-        { src: 'assets/team-builder/CHange Theme.PNG', w: 2558, h: 945 },
-        { src: 'assets/team-builder/Different Theme 1.PNG', w: 2557, h: 745 },
-        { src: 'assets/team-builder/Different Theme 2.PNG', w: 2557, h: 763 },
+        { src: 'assets/team-builder/News.PNG', w: 2558, h: 571, title: 'This is the home page of the application. It serves a news feed taken from the database for the viewers to see.' },
+        { src: 'assets/team-builder/Build 1.PNG', w: 2562, h: 1051, title: 'A shot of the "build" screen, where users select a Pokemon to add to their team.' },
+        { src: 'assets/team-builder/Build 2.PNG', w: 2558, h: 595, title: 'Selected Pokemon are shown with their various attributes and abilties. The team can also be named and notes can be added per team member.' },
+        { src: 'assets/team-builder/Build 3.PNG', w: 2559, h: 576, title: 'A shot showing more details for the selected team members.' },
+        { src: 'assets/team-builder/View 1.PNG', w: 2562, h: 1215, title: 'The "view" screen, where a list of other teams are displayed at a glance.' },
+        { src: 'assets/team-builder/View 2.PNG', w: 2545, h: 778, title: 'Teams can be "liked", and their members can be expanded to view more specific details without going into the dedicated team page.' },
+        { src: 'assets/team-builder/CHange Theme.PNG', w: 2558, h: 945, title: 'Multiple themes are available for the user to use throughout the application. This showcases a selection of them.' },
+        { src: 'assets/team-builder/Different Theme 1.PNG', w: 2557, h: 745, title: 'This shows the "view" page under the "charmander" theme.' },
+        { src: 'assets/team-builder/Different Theme 2.PNG', w: 2557, h: 763, title: 'This shows the "view" page under the "pikachu" theme.' },
       ],
       backgroundImage: 'assets/team-builder/News.PNG',
       fullWidth: false
@@ -66,14 +66,12 @@ export class ProjectsComponent implements OnInit {
         }
       ],
       images: [
-        { src: 'assets/multitool/Register.PNG', w: 1960, h: 976 },
-        { src: 'assets/multitool/Login.PNG', w: 2544, h: 959 },
-        { src: 'assets/multitool/Checklist 1.PNG', w: 1979, h: 692 },
-        { src: 'assets/multitool/Checklist 2.PNG', w: 1979, h: 1104 },
-        { src: 'assets/multitool/Ledger 1.PNG', w: 2558, h: 618 },
-        { src: 'assets/multitool/Ledger 2.PNG', w: 1102, h: 739 },
-        { src: 'assets/multitool/Profile.PNG', w: 1978, h: 1176 },
-        { src: 'assets/multitool/Link Account.PNG', w: 1978, h: 971 },
+        { src: 'assets/multitool/Checklist 1.PNG', w: 1979, h: 692, title: 'An overview of all available checklists in XIV|Checklist (with placeholder values).' },
+        { src: 'assets/multitool/Checklist 2.PNG', w: 1979, h: 1104, title: 'A view of a specific category checklist with the ability to mark it as untracked (X), default (-), or complete.' },
+        { src: 'assets/multitool/Ledger 1.PNG', w: 2558, h: 618, title: 'A sample ledger from XIV|Ledger with test values.' },
+        { src: 'assets/multitool/Ledger 2.PNG', w: 1102, h: 739, title: 'Adding a transaction to a ledger in XIV|Ledger.' },
+        { src: 'assets/multitool/Profile.PNG', w: 1978, h: 1176, title: 'User profile page with an e-mail address, added retainer values, and the ability to link your XIV|Multitool account with your in-game character.' },
+        { src: 'assets/multitool/Link Account.PNG', w: 1978, h: 971, title: 'The dialog for linking your character with your account.' },
       ],
       backgroundImage: 'assets/multitool/Profile.PNG',
       fullWidth: false
@@ -110,6 +108,11 @@ export class ProjectsComponent implements OnInit {
         }
       ],
       trelloLinks: [
+        {
+          path: 'https://trello.com/b/lNLnxhzl/js-personal-site-updates',
+          id: 'personal1',
+          text: 'View Project Board'
+        }
       ],
       images: [
         
@@ -126,11 +129,7 @@ export class ProjectsComponent implements OnInit {
       langs: ['Angular', 'C# Web API', 'SQL', 'JavaScript', 'React', 'jQuery', 'VBA', '...and more!'],
       githubLinks: [],
       trelloLinks: [
-        {
-          path: 'https://trello.com/b/lNLnxhzl/js-personal-site-updates',
-          id: 'personal1',
-          text: 'View Project Board'
-        }
+        
       ],
       images: [],
       fullWidth: true,
