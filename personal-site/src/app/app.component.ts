@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   get version(): string {
-    return '1.3.0';
+    return '1.3.1';
   }
 
   ngOnInit(){

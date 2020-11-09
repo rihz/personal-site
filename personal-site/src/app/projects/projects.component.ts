@@ -126,7 +126,7 @@ export class ProjectsComponent implements OnInit {
         + 'my personal projects serve a way for me to take what I am currently using at work and '
         + 'improve my skills with it. As such, a lot of what I have accomplished in my career uses '
         + 'the same frameworks as you see in the projects above.',
-      langs: ['Angular', 'C# Web API', 'SQL', 'JavaScript', 'React', 'jQuery', 'VBA', '...and more!'],
+      langs: ['Angular', 'C# Web API', '.NET Core 2.0+', 'PHP', 'SQL', 'JavaScript', 'React', 'jQuery', 'VBA', '...and more!'],
       githubLinks: [],
       trelloLinks: [
         
